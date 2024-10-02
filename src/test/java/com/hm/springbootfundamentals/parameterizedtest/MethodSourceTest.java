@@ -1,7 +1,5 @@
 package com.hm.springbootfundamentals.parameterizedtest;
 
-import org.junit.Before;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.RepetitionInfo;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -11,18 +9,12 @@ import static org.junit.Assert.assertEquals;
 
 public class MethodSourceTest {
 
-    @Before
-
     private static String[] getFruits() {
         return new String[]{"Apple", "Banana", "Orange"};
     }
 
     private static Object[] getObject() {
-        return new Object[][]{
-                {1, "John", "Math"},
-                {2, "Jane", "Science"},
-                {3, "Doe", "History"}
-        };
+        return new Object[][]{{1, "John", "Math"}, {2, "Jane", "Science"}, {3, "Doe", "History"}};
     }
 
     @ParameterizedTest(name = "Test {index}: test getFruits fruit{0}")
